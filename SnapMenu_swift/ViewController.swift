@@ -10,9 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var skrollView: UIScrollView!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        let v1 : View1 = View1(nibName:"View1",bundle:nil)
+        
+        
+        self.addChildViewController(v1)
+    
+        self.skrollView.addSubview(v1.view)
+        
+        v1.didMove(toParentViewController: self)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
